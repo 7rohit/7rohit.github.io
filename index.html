@@ -1,1 +1,443 @@
-Hello World
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+  <style>.gm-control-active>img{box-sizing:content-box;display:none;left:50%;pointer-events:none;position:absolute;top:50%;transform:translate(-50%,-50%)}.gm-control-active>img:nth-child(1){display:block}.gm-control-active:hover>img:nth-child(1),.gm-control-active:active>img:nth-child(1){display:none}.gm-control-active:hover>img:nth-child(2),.gm-control-active:active>img:nth-child(3){display:block}
+</style>
+<style>
+  .gm-ui-hover-effect{opacity:.6}.gm-ui-hover-effect:hover{opacity:1}
+</style>
+<style>
+  .dismissButton{background-color:#fff;border:1px solid #dadce0;color:#1a73e8;border-radius:4px;font-family:Roboto,sans-serif;font-size:14px;height:36px;cursor:pointer;padding:0 24px}.dismissButton:hover{background-color:rgba(66,133,244,0.04);border:1px solid #d2e3fc}.dismissButton:focus{background-color:rgba(66,133,244,0.12);border:1px solid #d2e3fc;outline:0}.dismissButton:hover:focus{background-color:rgba(66,133,244,0.16);border:1px solid #d2e2fd}.dismissButton:active{background-color:rgba(66,133,244,0.16);border:1px solid #d2e2fd;box-shadow:0 1px 2px 0 rgba(60,64,67,0.3),0 1px 3px 1px rgba(60,64,67,0.15)}.dismissButton:disabled{background-color:#fff;border:1px solid #f1f3f4;color:#3c4043}
+</style>
+    <title>Aerial Robotics IITK</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-P9FT69"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script src="/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><script src="/cdn-cgi/apps/body/4o300efCt-CXoq1JEC-sVReFz48.js"></script><link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,300i,400,500,600,700,800,900,900i%7CRoboto+Mono:100,300,300i,400,400i,500,500i,700,700i">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/grt-youtube-popup.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  <link rel="stylesheet" href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gewogIGRpc3BsYXk6IGJsb2NrOwogIGJhY2tncm91bmQ6ICM0NTQ4NGQ7CiAgY29sb3I6ICNmZmY7CiAgbGluZS1oZWlnaHQ6IDEuNDU7CiAgcG9zaXRpb246IGZpeGVkOwogIHotaW5kZXg6IDkwMDAwMDAwOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIHBhZGRpbmc6IC41ZW0gMWVtOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOwogICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmU7CiAgICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTsKICAgICAgICAgIHVzZXItc2VsZWN0OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXVtkYXRhLXZpc2liaWxpdHk9ImhpZGRlbiJdIHsKICBkaXNwbGF5OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1tZXNzYWdlIHsKICBkaXNwbGF5OiBibG9jazsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gYSB7CiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7CiAgY29sb3I6ICNlYmViZjQ7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6aG92ZXIsCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6YWN0aXZlIHsKICBjb2xvcjogI2RiZGJlYjsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gY2xvdWRmbGFyZS1hcHAtY2xvc2UgewogIGRpc3BsYXk6IGJsb2NrOwogIGN1cnNvcjogcG9pbnRlcjsKICBmb250LXNpemU6IDEuNWVtOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogLjRlbTsKICB0b3A6IC4zNWVtOwogIGhlaWdodDogMWVtOwogIHdpZHRoOiAxZW07CiAgbGluZS1oZWlnaHQ6IDE7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGNsb3VkZmxhcmUtYXBwLWNsb3NlOmFjdGl2ZSB7CiAgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsKICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1jbG9zZTpob3ZlciB7CiAgb3BhY2l0eTogLjllbTsKICBjb2xvcjogI2ZmZjsKfQo="><script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/39/10/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/39/10/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/39/10/geocoder.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/39/10/map.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/39/10/controls.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/39/10/stats.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/39/10/onion.js"></script></head>
+  <body class="">
+    <div class="ie-panel"><a href="https://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." width="820" height="42"></a></div>
+    <div class="preloader loaded">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+        <p>Loading...</p>
+      </div>
+    </div>
+    <div class="page animated" style="animation-duration: 500ms;">
+      <!-- Page Header-->
+      <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap" style="height: 110px;">
+          <nav class="rd-navbar rd-navbar-modern rd-navbar-original rd-navbar-static" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle toggle-original" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <!-- RD Navbar Brand-->
+                  <div class="rd-navbar-brand"><a href="index.html"><img class="brand-logo-light" src="images/logo-default-207x45.png" alt="" width="207" height="45"></a></div>
+                </div>
+                <div class="rd-navbar-main-element"> 
+                  <div class="rd-navbar-nav-wrap toggle-original-elements">
+                    <!-- RD Navbar Nav-->
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                      </li>
+                      <li class="rd-nav-item rd-navbar--has-dropdown rd-navbar-submenu"><a class="rd-nav-link" href="about-us.html">About Us</a><!--<span class="rd-navbar-submenu-toggle"></span>-->
+                        <!-- RD Navbar Dropdown-->
+                        <ul class="rd-menu rd-navbar-dropdown">
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="our-team.html">Our Team</a></li>
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="past-projects.html">Past Projects</a></li>
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="pricing.html">Pricing</a></li>
+                        </ul>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="ouruavs.html">Our UAVs</a>
+                      </li>
+                      <li class="rd-nav-item rd-navbar--has-megamenu rd-navbar-submenu"><a class="rd-nav-link" href="#">Pages</a><!--<span class="rd-navbar-submenu-toggle"></span>-->
+                        <!-- RD Navbar Megamenu-->
+                        <ul class="rd-menu rd-navbar-megamenu rd-navbar-open-right">
+                          <li class="rd-megamenu-item">
+                            <h6 class="rd-megamenu-title">Pages 1</h6>
+                            <ul class="rd-megamenu-list">
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="typography.html">Typography</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="buttons.html">Buttons</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="timers-&amp;-counters.html">Timers &amp; Counters</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="forms.html">Forms</a></li>
+                            </ul>
+                          </li>
+                          <li class="rd-megamenu-item">
+                            <h6 class="rd-megamenu-title">Pages 2</h6>
+                            <ul class="rd-megamenu-list">
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="grid-system.html">Grid system</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="icon-lists.html">Icon Lists</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="privacy-policy.html">Privacy policy</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="coming-soon.html">Coming Soon</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="search-results.html">Search results</a></li>
+                            </ul>
+                          </li>
+                          <li class="rd-megamenu-item">
+                            <h6 class="rd-megamenu-title">Pages 3</h6>
+                            <ul class="rd-megamenu-list">
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="gallery-1.html">Gallery 1</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="gallery-2.html">Gallery 2</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="news.html">News</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="news-2.html">News 2</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="blog-post.html">Blog Post</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- Swiper-->
+      <section class="section section-lg section-main-bunner">
+        <div class="main-bunner-img" style="background-image: url(&quot;images/bg-bunner-1.jpg&quot;); background-size: cover;"></div>
+        <div class="main-bunner-inner offset-top-140">
+          <div class="container">
+            <div class="row justify-content-lg-between align-items-lg-center">
+              <div class="col-lg-2 order-lg-2 text-center text-lg-right">
+                <div class="block-video-button"><a href="#" class="youtube-link" youtubeid="j_l1Y6-9mBE"><span class="icon fa-play icon-md" ></span></a></div>
+              </div>
+              <div class="col-12 col-lg-9 col-xl-6 order-lg-1 text-center text-lg-left">
+                <h2 class="offset-top-30">AerialRobotics IITK</h2>
+                <h4 class="font-weight-regular text-opacity-80">Making Aerial Bots since 7 years.</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-lg bg-gray-1 text-center">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-md-6 col-lg-4 wow-outer">
+              <div class="wow slideInLeft" style="visibility: visible; animation-name: slideInLeft;">
+                <div class="box-icon-classic">
+                  <div class="box-icon-inner decorate-triangle decorate-color-secondary"><span class="icon-xl text-primary linearicons-users2"></span></div>
+                  <div class="box-icon-caption">
+                    <h4><a href="#">Best Instructors</a></h4>
+                    <p class="context-dark-lighter-1">Our helicopter flight instructors are carefully selected and adhere to the highest standards of the industry.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow-outer">
+              <div class="wow slideInDown" style="visibility: visible; animation-name: slideInDown;">
+                <div class="box-icon-classic">
+                  <div class="box-icon-inner decorate-circle decorate-color-secondary-2"><span class="icon-xl text-primary linearicons-radar"></span></div>
+                  <div class="box-icon-caption">
+                    <h4><a href="#">Exciting Location</a></h4>
+                    <p class="context-dark-lighter-1">We're conveniently located at LA International Airport, providing students with the best experience.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow-outer">
+              <div class="wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
+                <div class="box-icon-classic">
+                  <div class="box-icon-inner decorate-rectangle decorate-color-primary"><span class="icon-xl text-primary linearicons-helicopter"></span></div>
+                  <div class="box-icon-caption">
+                    <h4><a href="#">Modern Helicopters</a></h4>
+                    <p class="context-dark-lighter-1">Our flight school has the best and the most diverse fleet of helicopters in California as well as simulators.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-xl bg-gray-750">
+        <div class="container">
+          <div class="row row-30 justify-content-center text-center">
+            <div class="col-12 wow-outer">
+              <div class="wow slideInDown" style="visibility: visible; animation-name: slideInDown;">
+                <h3 class="title-decorate-dark title-decorate-center">Our UAVs</h3>
+              </div>
+            </div>
+            <div class="col-lg-8 wow-outer">
+              <div class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <p class="text-opacity-80 big-2 text-accent-4">Peek into the world of possiblities with our UAVs</p>
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+            <div class="col-md-6 col-lg-4">
+              <div class="team-classic-2">
+                <div class="team-classic-figure"><img src="images/uavs/team-classic-1-390x252.jpg" alt="" width="390" height="252">
+                </div>
+                <div class="team-classic-caption">
+                  <h4><a class="team-name" href="ouruavs.html">UAV 1</a></h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="team-classic-2">
+                <div class="team-classic-figure"><img src="images/uavs/team-classic-2-390x252.jpg" alt="" width="390" height="252">
+                </div>
+                <div class="team-classic-caption">
+                  <h4><a class="team-name" href="ouruavs.html">UAV 2</a></h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="team-classic-2">
+                <div class="team-classic-figure"><img src="images/uavs/team-classic-3-390x252.jpg" alt="" width="390" height="252">
+                </div>
+                <div class="team-classic-caption">
+                  <h4><a class="team-name" href="ouruavs.html">UAV 3</a></h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="team-classic-2">
+                <div class="team-classic-figure"><img src="images/uavs/team-classic-4-390x252.jpg" alt="" width="390" height="252">
+                </div>
+                <div class="team-classic-caption">
+                  <h4><a class="team-name" href="ouruavs.html">UAV 4</a></h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="team-classic-2">
+                <div class="team-classic-figure"><img src="images/uavs/team-classic-5-390x252.jpg" alt="" width="390" height="252">
+                </div>
+                <div class="team-classic-caption">
+                  <h4><a class="team-name" href="ouruavs.html">UAV 5</a></h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="team-classic-2">
+                <div class="team-classic-figure"><img src="images/uavs/team-classic-6-390x252.jpg" alt="" width="390" height="252">
+                </div>
+                <div class="team-classic-caption">
+                  <h4><a class="team-name" href="ouruavs.html">UAV 6</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-lg bg-default text-center">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-8 wow-outer">
+              <div class="wow slideInDown" style="visibility: visible; animation-name: slideInDown;">
+                <h3 class="title-decorate-light title-decorate-center">Gallery</h3>
+                <p class="big-2">In our gallery, you can take a look at the best moments from the life of our flight school. Among other highlights, it includes photos of our students, graduates, and instructors.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row isotope-wrap">
+          <!-- Isotope Content-->
+          <div class="col-lg-12">
+            <div class="isotope" data-isotope-layout="masonry" data-isotope-group="gallery" data-lightgallery="group" data-lg-thumbnail="false" data-column-class=".col-lg-3" style="position: relative; height: 764px;">
+              <div class="row no-gutters row-condensed">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 2" style="position: absolute; left: 0px; top: 0px;">
+                  <div class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="gallery-item-classic box-1"><img src="images/gallery-home-2-1-480x339.jpg" alt="" width="480" height="339">
+                      <div class="gallery-item-classic-caption"><a href="images/gallery-home-2-1-original.jpg" data-lightgallery="item">zoom</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 1" style="position: absolute; left: 467px; top: 0px;">
+                  <div class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="gallery-item-classic box-1"><img src="images/gallery-masonry-10-480x339.jpg" alt="" width="480" height="339">
+                      <div class="gallery-item-classic-caption"><a href="images/gallery-masonry-10-original.jpg" data-lightgallery="item">zoom</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 1" style="position: absolute; left: 935px; top: 0px;">
+                  <div class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="gallery-item-classic box-1"><img src="images/gallery-home-2-2-480x611.jpg" alt="" width="480" height="611">
+                      <div class="gallery-item-classic-caption"><a href="images/gallery-home-2-2-original.jpg" data-lightgallery="item">zoom</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 1" style="position: absolute; left: 1403px; top: 0px;">
+                  <div class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="gallery-item-classic box-1"><img src="images/gallery-masonry-11-480x445.jpg" alt="" width="480" height="445">
+                      <div class="gallery-item-classic-caption"><a href="images/gallery-masonry-13-original.jpg" data-lightgallery="item">zoom</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 1" style="position: absolute; left: 0px; top: 330px;">
+                  <div class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="gallery-item-classic box-1"><img src="images/gallery-masonry-7-480x339.jpg" alt="" width="480" height="339">
+                      <div class="gallery-item-classic-caption"><a href="images/gallery-masonry-7-original.jpg" data-lightgallery="item">zoom</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 2" style="position: absolute; left: 467px; top: 330px;">
+                  <div class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="gallery-item-classic box-1"><img src="images/gallery-home-2-3-480x445.jpg" alt="" width="480" height="445">
+                      <div class="gallery-item-classic-caption"><a href="images/gallery-13-original.jpg" data-lightgallery="item">zoom</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 isotope-item wow-outer" data-filter="Category 2" style="position: absolute; left: 1403px; top: 433px;">
+                  <div class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="gallery-item-classic box-1"><img src="images/gallery-home-2-4-480x339.jpg" alt="" width="480" height="339">
+                      <div class="gallery-item-classic-caption"><a href="images/gallery-home-2-4-original.jpg" data-lightgallery="item">zoom</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section context-dark section-xl" style="background-image: url(&quot;images/parallax-img-1.jpg&quot;); background-size: cover;">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-sm-6 col-lg-3">
+              <article class="counter-classic">
+                <div class="counter-classic-main">
+                  <div class="counter">12</div>
+                </div>
+                <p class="counter-classic-title">Months</p>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <article class="counter-classic">
+                <div class="counter-classic-main">
+                  <div class="counter">14</div>
+                </div>
+                <p class="counter-classic-title">Members</p>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <article class="counter-classic">
+                <div class="counter-classic-main">
+                  <div class="counter">25</div>
+                </div>
+                <p class="counter-classic-title">Projects</p>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <article class="counter-classic">
+                <div class="counter-classic-main">
+                  <div class="counter">2</div>
+                </div>
+                <p class="counter-classic-title">Awards</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-lg bg-gray-1">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-12 text-center">
+              <h3 class="title-decorate-light title-decorate-center"> Sponsors</h3>
+            </div>
+            <div class="col-md-6 col-lg-4 wow-outer">
+              <div class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="post-modern">
+                  <div class="post-modern-figure"><a href="https://iitk.ac.in"><img src="images/sponsors/iitklogo.png" alt="" width="370" height="370"></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow-outer">
+              <div class="wow slideInDown" style="visibility: visible; animation-name: slideInDown;">
+                <div class="post-modern post-modern-reverse">
+                  <div class="post-modern-figure"><a href="https://www.nvidia.com/en-us/"><img src="images/sponsors/nvidia.png" alt="" width="370" height="370"></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow-outer">
+              <div class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="post-modern post-modern-reverse">
+                  <div class="post-modern-figure"><a href="http://store-en.tmotor.com/"><img src="images/sponsors/tmotor.png" alt="" width="370" height="370"></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Page Footer-->
+      <footer class="section footer-classic context-dark">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-lg-8 order-lg-2 pl-xl-5 wow-outer">
+              <div class="wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
+                <div class="row row-50">
+                  <div class="col-12">
+                  </div>
+                  <div class="col-md-6">
+                    <h5 class="footer-title">Phone and address</h5>
+                    <ul class="list-contact-info">
+                      <li><span class="icon mdi mdi-map-marker icon-md icon-secondary"></span><span class="list-item-text"><a href="https://www.google.com/maps/place/Indian+Institute+of+Technology+Kanpur/@26.5123388,80.2329,15z/data=!4m5!3m4!1s0x0:0x3afbe880abc38436!8m2!3d26.5123388!4d80.2329"><span class="big-2 text-accent-5"> IIT Kanpur, Uttar Pradesh, India - 208016</span></a></span></li>
+                      <li><span class="icon mdi mdi-phone icon-md icon-secondary"></span><span class="list-item-text big-2">0512-259-0151</span></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h5 class="footer-title">Get Social</h5>
+                    <p class="big-2 text-accent-5"> Follow us to stay connected and receive instant updates.</p>
+                    <ul class="social-list">
+                      <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-facebook" href="https://www.facebook.com/ariitk/"></a></li>
+                      <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-instagram" href="https://instagram.com/ar.iitk"></a></li>
+                      <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-github" href="https://github.com/AerialRobotics-IITK"></a></li>
+                      <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-linkedin" href="https://www.linkedin.com/company/aerial-robotics-iitk"></a></li>
+                      <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-youtube" href="https://www.youtube.com/channel/UC0A50yxfhMAYRSOMTG87o6A?view_as=subscriber"> </a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 order-lg-1 pr-xl-5 wow-outer">
+              <div class="wow slideInLeft" style="visibility: visible; animation-name: slideInLeft;">
+                <div class="row row-30">
+                  <div class="col-12"><a href="index.html"><img src="images/logo-default-207x45.png" alt="" srcset="images/logo-default-207x45.png 2x" width="207" height="45"></a></div>
+                  <div class="col-12">
+                    <p>Our flight school was founded by pilots who grew up with dreams of flying. Since 1999, thousands of professional pilots from over 75 countries have graduated from our flight training courses.</p>
+                    <div class="footer-divider"></div>
+                    <p class="rights"><span>©&nbsp; </span><span class="copyright-year">2020</span><span>&nbsp;</span><span>Blue Hill</span><span>.&nbsp;</span><span>All Rights Reserved.</span><br><span>&nbsp;</span><a href="privacy-policy.html">Privacy Policy</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/grt-youtube-popup.js"></script>    
+
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-7078796-5']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();</script>
+
+    <script> $(".youtube-link").grtyoutube({theme:"light", autoPlay:false}); </script>
+  
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script>
+<a href="#" id="ui-to-top" class="ui-to-top fa fa-angle-up"></a>
+<script type="text/javascript" id="">(function(){var b=document.location.search.split("aff\x3d")[1];if(b){var d=document.querySelectorAll("a"),c;for(c=0;c<d.length;c++){var a=d[c];0==a.href.indexOf("https://www.templatemonster.com")&&(0<a.href.indexOf("?")?a.href=a.href+"\x26aff\x3d"+b:a.href=a.href+"?aff\x3d"+b)}}b=document.location.search.split("i\x3d")[1];var e=document.location.search.split("pr_code\x3d")[1];if(b&&e)for(b=b.split("\x26")[0],d=document.querySelectorAll("a"),c=0;c<d.length;c++)a=d[c],0==a.href.indexOf("https://www.templatemonster.com")&&
+(a.href="https://www.templatehelp.com/preset/cart.php?act\x3dadd\x26templ\x3d"+b+"\x26pr_code\x3d"+e)})();</script>
+<div style="position: absolute; left: 0px; top: -2px; height: 1px; overflow: hidden; visibility: hidden; width: 1px;"><span style="position: absolute; font-size: 300px; width: auto; height: auto; margin: 0px; padding: 0px; font-family: Roboto, Arial, sans-serif;">BESbswy</span></div></body></html>
+<!--A WEBSITE EDITED BY ROHIT KEJRIWAL-->
